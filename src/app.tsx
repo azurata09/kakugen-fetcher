@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'preact/hooks'
 import axios from 'axios'
+import './app.css'
 
 export function App() {
   const [kakugen, setKakugen] = useState('');
@@ -12,8 +13,8 @@ export function App() {
   });
 
   return (
-    <>
-      <p>{kakugen}</p>
-    </>
+    <div class="kakugen-box">
+      <span>{ kakugen }</span>
+    </div>
   )
 }
