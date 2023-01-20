@@ -3,7 +3,7 @@ import axios from 'axios'
 import './app.css'
 
 export function App() {
-  const [kakugen, setKakugen] = useState('');
+  const [kakugen, setKakugen] = useState();
   const BASE_URL = 'https://script.google.com/macros/s/AKfycbzQU6p4jcri6bajDRg_lsGWKS_pcL2tE3nWbHHCWH1_pFzsx7bAB_U2qTryaj9FwQKd/exec'
 
   useEffect(() => {
@@ -12,9 +12,9 @@ export function App() {
     })
   });
 
-  return (
+  return kakugen === '' ? (<></>) : (
     <div class="kakugen-box">
-      <span>{ kakugen }</span>
+      <span>{kakugen ?? 'Loading...'}</span>
     </div>
   )
 }
